@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from math import sqrt
 
 def by_hand_mean(the_list: list) -> float:
     sum = 0
@@ -71,6 +72,9 @@ def pandas_variance(pd_list: pd.DataFrame) -> float|int:
 
     return float(variance_result[0])
 
+def std_dev(varriance: float) -> float:
+    return sqrt(varriance)
+
 if __name__ == "__main__":
     data1 = [
     12.5, 15.2, 13.1, 16.7, 14.8, 
@@ -106,3 +110,9 @@ if __name__ == "__main__":
 
     pd_variance = pandas_variance(pd.DataFrame(data=data1))
     print("Pandas variance result: ", pd_variance)
+
+    list_std_dev = std_dev(by_hand_sample_variance_result)
+    print("Std Deviation: ", list_std_dev)
+
+    pd_std_dev = pd.DataFrame(data=data1).std()[0]
+    print("Pandas Std Dev: ", pd_std_dev)
