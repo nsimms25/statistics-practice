@@ -20,17 +20,41 @@ def by_hand_median(the_list: list) -> float|int:
     if length % 2 == 0:
         middle = int(length / 2)
         median = (the_list[middle-1] + the_list[middle]) / 2
-
-    if length % 2 == 1:
+    else:
         middle = int(length / 2)
         median = the_list[middle]
 
-    return median # type: ignore
+    return median
 
 def pandas_median(pd_list: pd.DataFrame) -> float:
     median = pd_list.median()
 
     return float(median[0])
+
+def by_hand_mode(the_list: list) -> float|int:
+    count_nums = {}
+
+    for i in range(len(the_list)):
+        if the_list[i] not in count_nums.keys():
+            count_nums[the_list[i]] = 1
+        else:
+            count_nums[the_list[i]] = count_nums[the_list[i]] + 1
+
+    max_num = 0
+    max_count = 0
+    for i in count_nums.keys():
+        if count_nums[i] > max_count:
+            max_num = i
+            max_count = count_nums[i]
+    
+    return max_num
+
+def pandas_mode(pd_list: pd.DataFrame) -> float|int:
+    mode_result = pd_list.mode()
+
+    return mode_result[0][0]
+
+
 
 if __name__ == "__main__":
     data1 = [
@@ -41,6 +65,8 @@ if __name__ == "__main__":
     12.8, 11.4, 10.5, 30.2, 32.1
 ]
     data2 = [13, 15, 76, 85]
+
+    data3 = [1, 1, 3, 5, 6, 7, 8, 2, 3, 1]
 
     by_hand_mean_result = by_hand_mean(data1)
     print("By hand mean result: ", by_hand_mean_result)
@@ -53,3 +79,10 @@ if __name__ == "__main__":
     
     pd_median = pandas_median(pd.DataFrame(data=data1))
     print("Pandas median result: ", pd_median)
+
+    by_hand_mode_result = by_hand_mode(data3)
+    print("By Hand mode result: ", by_hand_mode_result)
+
+    pd_mode = pandas_mode(pd.DataFrame(data=data3))
+    print("Pandas mode result: ", pd_mode)
+
