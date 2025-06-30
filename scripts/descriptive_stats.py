@@ -54,7 +54,22 @@ def pandas_mode(pd_list: pd.DataFrame) -> float|int:
 
     return mode_result[0][0]
 
+def by_hand_sample_variance(the_list: list) -> float:
+    bessel_correction = 1 / (len(the_list) - 1)
+    list_mean = pandas_mean(pd.DataFrame(data=the_list))
 
+    sum = 0
+    for i in range(len(the_list)):
+        sum += ((the_list[i] - list_mean) ** 2)
+    
+    variance = bessel_correction * sum
+
+    return float(variance)
+
+def pandas_variance(pd_list: pd.DataFrame) -> float|int:
+    variance_result = pd_list.var()
+
+    return float(variance_result[0])
 
 if __name__ == "__main__":
     data1 = [
@@ -86,3 +101,8 @@ if __name__ == "__main__":
     pd_mode = pandas_mode(pd.DataFrame(data=data3))
     print("Pandas mode result: ", pd_mode)
 
+    by_hand_sample_variance_result = by_hand_sample_variance(data1)
+    print("By hand variance result: ", by_hand_sample_variance_result)
+
+    pd_variance = pandas_variance(pd.DataFrame(data=data1))
+    print("Pandas variance result: ", pd_variance)
