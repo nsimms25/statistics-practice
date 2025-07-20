@@ -18,6 +18,7 @@ Features
     Standard Deviation (std_dev)
 
 Example Output
+<pre>
     By hand mean result:  18.068
     Pandas mean result:  18.068
     By hand median result:  17.2
@@ -28,6 +29,7 @@ Example Output
     Pandas variance result:  43.98291666666666
     Std Deviation:  6.629720865776499
     Pandas Std Dev:  6.629720865776499
+</pre>
 
 Educational Purpose
     Reinforces understanding of statistical operations like:
