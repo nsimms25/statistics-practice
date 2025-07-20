@@ -87,6 +87,7 @@ python-statistics-practice/
 ├── README.md
 ├── data/                     # Datasets
 ├── scripts/                  # Python modules
-│   ├── descriptive_stats.py
+    ├── descriptive_stats.py
+    ├── distributions.py
 └── projects/                 # Projects
 </pre>
