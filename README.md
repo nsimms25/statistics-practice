@@ -1,7 +1,7 @@
 # Statistics Practice Repo
 Repo to practice statistics using Python, outline and descriptions included. 
 
-Descriptive Statistics Module
+Descriptive Statistics Module (descriptive_stats.py)
 
 This section contains foundational statistical functions for comparing manual ("by hand") calculations to built-in Pandas methods. It reinforces core statistical concepts and shows how the math works under the hood.
 
@@ -18,16 +18,16 @@ Features
     Standard Deviation (std_dev)
 
 Example Output
-By hand mean result:  18.068
-Pandas mean result:  18.068
-By hand median result:  17.2
-Pandas median result:  17.2
-By Hand mode result:  1
-Pandas mode result:  1
-By hand variance result:  43.98291666666666
-Pandas variance result:  43.98291666666666
-Std Deviation:  6.629720865776499
-Pandas Std Dev:  6.629720865776499
+    By hand mean result:  18.068
+    Pandas mean result:  18.068
+    By hand median result:  17.2
+    Pandas median result:  17.2
+    By Hand mode result:  1
+    Pandas mode result:  1
+    By hand variance result:  43.98291666666666
+    Pandas variance result:  43.98291666666666
+    Std Deviation:  6.629720865776499
+    Pandas Std Dev:  6.629720865776499
 
 Educational Purpose
     Reinforces understanding of statistical operations like:
