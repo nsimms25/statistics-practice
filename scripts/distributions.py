@@ -24,8 +24,31 @@ def show_distributions(sample_size: int = 1000):
     plt.show()
 
 
+def pdf_vs_cdf():
+    normal_data = np.random.normal(size=1000)
+    sorted_data = np.sort(normal_data)
+
+    plt.figure(figsize=(12, 6))
+
+    plt.subplot(1, 2, 1)
+    sns.histplot(normal_data, kde=True, stat="density", bins=30, color='skyblue', label="PDF")
+    plt.title("PDF - Probability Density Function")
+    plt.legend()
+
+    plt.subplot(1, 2, 2)
+    cdf = np.arange(len(sorted_data)) / float(len(sorted_data))
+    plt.plot(sorted_data, cdf, marker=".", linestyle="none", label="Empirical CDF")
+    plt.title("CDF - Cumulative Distribution Function")
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
+
 if __name__ == "__main__":
     print("Distributions as main file.")
 
     #Uncomment to show some basic distributions.
     #show_distributions()
+
+    #Uncomment tp show the differences between PDF and CDF.
+    #pdf_vs_cdf()
