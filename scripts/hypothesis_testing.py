@@ -29,9 +29,9 @@ def one_sample_t_test_byhand(pop_mean: float, samples: np.ndarray, alpha: float 
 
 
 def one_sample_t_test_scipy(samples: np.ndarray, pop_mean: float, alpha: float = 0.05) -> dict:
-    t_stat, p_value = ttest_1samp(samples, pop_mean)
-    t_stat = float(t_stat)
-    p_value = float(p_value)
+    result = ttest_1samp(samples, pop_mean)
+    t_stat = float(result.statistic)
+    p_value = float(result.pvalue)
 
     reject_null = p_value < alpha
 
